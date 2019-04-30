@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{$title|default='页面标题'}</title>
+    <!--<link rel="stylesheet" href="/static/css/bootstrap.css">
+    <script src="/static/js/jquery-3.3.1.min.js"></script>
+    <script src="/static/js/bootstrap.js"></script>-->
+
+    <!--tp模板中引入静态文件的写法 load-->
+    {load href='/static/css/bootstrap.css'/}
+    {load href='/static/js/jquery-3.3.1.min.js'/}
+    {load href='/static/js/bootstrap.js'/}<!--一定要先应jquery再引bootstrap-->
+</head>
+<style>
+
+</style>
+<body>
+<!--进行栅格布局-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            {include file="public/nav" /}
+        </div>
+    </div>
+    <div class="row">
+    <!-- 头部结束-->

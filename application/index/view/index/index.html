@@ -1,0 +1,52 @@
+
+{extend name="public:base"}
+{block name='content'}
+<style>
+    .image{
+        width:280px;    border-radius: 6px;float: left;
+    }
+    .one-article{
+        border-bottom: 1px solid rgba(43,51,59,0.1);
+        height: 220px;
+    }
+    .articl-content {
+        margin-left: 300px;
+        line-height: 30px;
+        height: 184px;
+    }
+    .articl-content p{
+        font-size: 15px;
+        color: #545C63;
+        overflow: hidden;
+        height: 150px;
+    }
+
+</style>
+
+        <div class="col-md-8">
+            <div class="page-header">
+                <h1>{$cateName}</h1>
+            </div>
+
+            {volist name="articleList" id="article" empty="$empty"}
+                <div class="one-article">
+
+                    <img src="{$article.title_img}" class="ima-rounded image" >
+                    <div class="articl-content ">
+                        <h3 style="color: #1e88e5"><a href="{:url('articleDetail',['article_id' => $article.id])}">{$article.title}</a></h3>
+                        <span style="color: #9d9d9d">发布者：{$article.user_id}
+                            &nbsp;&nbsp;发布时间：{$article.create_time}
+                            &nbsp;&nbsp;阅读量：{$article.pv}
+                        </span>
+                        <p>{$article.content|raw}</p>
+
+                    </div>
+                </div>
+            {/volist}
+            <div class="text-center"> {$articleList|raw}</div>
+
+        </div>
+{/block}
+
+
+
